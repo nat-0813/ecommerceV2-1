@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/home.css"; // Import the CSS file
-import Slider from "../components/slider";
-
+import Slider from "../components/slider"; //imports the Slider component from the ../components/slider file. The Slider component is a custom component that handles the rendering of a slider section on the home page
+//Overall, this defines the Home component, which represents the content of the home page. It includes a hero image section and a slider section, making use of the Slider component.
 function Home() {
   return (
     <>

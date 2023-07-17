@@ -7,7 +7,10 @@ import {} from "@fortawesome/free-brands-svg-icons";
 // import { ShoppingCart } from "phosphor-react";
 
 export const Nav = () => {
+  //defines a functional component named Nav using an arrow function syntax. then exported using the export keyword, which allows other modules to import and use this component
   return (
+    // inside the 'Nav' component we have JSX markup. which represents structure and content of the component that will be rendered
+    //div element wrapping a ul element with the class name "navbar". It contains a list of navigation links represented by li elements. Each li contains a Link component from React Router, which renders a link to a specific route
     <>
       <div className="header">
         <img

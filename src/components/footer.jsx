@@ -1,3 +1,6 @@
+//had difficulty getting font awesome icons to appear
+//first, had to install a couple font awesome packages for react
+//imported each below that was used
 import React from "react";
 // import { Link } from "react-router-dom";
 import "../css/footer.css";
@@ -13,8 +16,9 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-
+//used functional component named footer used arrow function, also used export keyword to be imported and used in other files
 export const Footer = () => {
+  //The <div> elements with the class name "follow" and "follow i" represent sections for social media icons. The <div> with class "icon" contains <a> elements with links to different social media platforms. The <FontAwesomeIcon> component from the @fortawesome/react-fontawesome package is used to render icons for each social media platform.
   return (
     <footer>
       <div className="footer">

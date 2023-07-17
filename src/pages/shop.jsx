@@ -90,7 +90,7 @@ const Shop = () => {
           </li>
         ))}
       </ul>
-      <ul id="products">
+      {/* <ul id="products">
         {products.map((product) => (
           <li key={product.Id}>
             <img src={product.ProductImage} alt={product.ProductName} />
@@ -99,7 +99,7 @@ const Shop = () => {
             <p>${product.Price.toFixed(2)}</p>
           </li>
         ))}
-      </ul>
+      </ul> */}
       <section className="page-header">
         <h1>Stay Adventurous </h1>
         <ul class="product-list">
