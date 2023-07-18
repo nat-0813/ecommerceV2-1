@@ -1,3 +1,4 @@
+// first, had to install React, useEffect, and useState these were necessary for creating a React component and managing state and side effects
 import React, { useEffect, useState } from "react";
 import "../css/shop.css";
 import pro1 from "../images/pro1.webp";
@@ -14,54 +15,69 @@ import pro11 from "../images/pro11.webp";
 import pro12 from "../images/pro12.webp";
 
 // import { response } from "express";
-
+//Inside the component, there are three state variables: products, selectedFilter, and filteredProducts.
+//They are initialized using the useState hook.
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState("all");
   const [filteredProducts, setFilteredProducts] = useState([]);
-
+  //The useEffect hook is used to fetch the product data from the specified API endpoint
+  //When the component mounts, the effect is triggered, and the product data is retrieved.
   useEffect(() => {
     fetch("http://localhost:3000/productsjson") // Replace with your API endpoint
       .then((response) => response.json())
       .then((data) => {
+        //The retrieved data is then used to set the products and filteredProducts state variables.
         setProducts(data);
         setFilteredProducts(data);
       })
-
+      //If there's an error during the fetch request, it is caught and logged to the console.
       .catch((error) => {
         console.error("Error fetching products:", error);
       });
   }, []);
-
+  //The handleFilter function is defined to handle the filtering of products based on the selected filter.
   const handleFilter = (filter) => {
-    setSelectedFilter(filter);
+    //It takes a filter parameter, which represents the selected filter.
+    //Inside the function, the setSelectedFilter function is used to update the selectedFilter state variable with the chosen filter value.
+    setSelectedFilter(filter); //Inside the function, the setSelectedFilter function is used to update the selectedFilter state variable with the chosen filter value.
     if (filter === "all") {
+      //If the filter is "all", the filteredProducts state variable is set to the original products array.
       setFilteredProducts(products);
     } else if (filter === "chocolates") {
+      //If the filter is "chocolates", the filteredProducts state variable is set to an array of products that have a name containing the word "chocolate" (case-insensitive).
       const filtered = products.filter((product) =>
         product.ProductName.toLowerCase().includes("chocolate")
       );
       setFilteredProducts(filtered);
     } else if (filter === "chips") {
+      //If the filter is "chips", the filteredProducts state variable is set to an array of products that have a name containing the word "chip" (case-insensitive).
       const filtered = products.filter((product) =>
         product.ProductName.toLowerCase().includes("chip")
       );
+      //If the filter is "price-less-than-10", the filteredProducts state variable is set to an array of products that have a price less than 10.
       setFilteredProducts(filtered);
     } else if (filter === "price-less-than-10") {
       const filtered = products.filter((product) => product.Price < 10);
+      //The filtered array is then set as the new value of the filteredProducts state variable.
       setFilteredProducts(filtered);
     }
   };
   return (
+    //The handleFilter function is defined to handle the filtering of products based on the selected filter.
+    //It takes a filter parameter, which represents the selected filter
     <>
       <div className="filter-buttons">
         <button
-          className={selectedFilter === "all" ? "active" : ""}
+          //inside the function, the setSelectedFilter function is used to update the selectedFilter state variable with the chosen filter value.
+          //Depending on the selected filter, the products array is filtered using different conditions.
+          className={selectedFilter === "all" ? "active" : ""} //If the filter is "all", the filteredProducts state variable is set to the original products array.
           onClick={() => handleFilter("all")}
         >
           All Products
         </button>
         <button
+          //
           className={selectedFilter === "chocolates" ? "active" : ""}
           onClick={() => handleFilter("chocolates")}
         >

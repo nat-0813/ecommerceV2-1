@@ -34,7 +34,7 @@ connection.connect((error) => {
 });
 
 //read all data from the mysql database
-app.get("/jsondata", (req, res) => {
+app.get("/productsjson", (req, res) => {
   const query = "SELECT * FROM products ";
 
   connection.query(query, (error, results) => {

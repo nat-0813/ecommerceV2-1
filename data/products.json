@@ -1,0 +1,86 @@
+[
+  {
+    "Id": 1,
+    "ProductImage": "https://www.walmart.com/https://i5.walmartimages.com/asr/49fd4000-8008-4f96-92cd-00ea3eb3e3b5.1dd35bcb242d2ee37f3cb4c8d77a7ad3.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF",
+    "ProductName": "Mexican Street Corn Cheetos",
+    "Description": "Mexican Street Corn Flavored",
+    "Price": 3.5
+  },
+  {
+    "Id": 2,
+    "ProductImage": "https://www.yamibuy.com/https://cdn.yamibuy.net//item/3bb0ab34989d400f070a070a7d241628_757x757.webp",
+    "ProductName": "Lays Traditional Miang",
+    "Description": "Lays Traditional Miang Flavored",
+    "Price": 3.5
+  },
+  {
+    "Id": 3,
+    "ProductImage": "https://www.bokksumarket.com/https://cdn.shopify.com/s/files/1/0557/4269/3571/products/HelloPandaStrawberry_2048x.jpg?v=1659553575",
+    "ProductName": "Hello Panda",
+    "Description": "Strawberry Creme Cookies",
+    "Price": 2.5
+  },
+  {
+    "Id": 4,
+    "ProductImage": "https://www.google.com/https://i.pinimg.com/474x/a9/ff/c7/a9ffc7a7b79b0db0baefff7d3b55ec9e--childhood-america.jpg",
+    "ProductName": "Fandango",
+    "Description": "Hotdog and Corn Flavored Brazilian Chips ",
+    "Price": 4.5
+  },
+  {
+    "Id": 5,
+    "ProductImage": "https://www.google.com/https://munchpak.com/media/catalog/product/cache/small_image/240x300/beff4985b56e3afdbeabfc89641a4582/s/o/sour-fruit-ooh-chews.jpg",
+    "ProductName": "Ooh! Chews",
+    "Description": "Brazilian Sour Candies",
+    "Price": 3.5
+  },
+  {
+    "Id": 6,
+    "ProductImage": "https://www.google.com/https://www.takaski.com/wp-content/uploads/2017/12/RISKA-Choco-Snack-Chocolate-Sticks-30-pcs-Made-in-Japan.jpg",
+    "ProductName": "Japanese Chocolate Sticks",
+    "Description": "Japanese Chocolate Sticks",
+    "Price": 11.5
+  },
+  {
+    "Id": 7,
+    "ProductImage": "https://www.bokksumarket.com/https://cdn.shopify.com/s/files/1/0557/4269/3571/products/BG10215KaramuchoHotChiliPotatoSticsk_e05e097b-f35e-4af2-96f9-d6e9966f4f58_800x.jpg?v=1656696169",
+    "ProductName": "Karamucho",
+    "Description": "Japanese Spicy Potato Sticks",
+    "Price": 3.5
+  },
+  {
+    "Id": 8,
+    "ProductImage": "https://www.bokksumarket.com/https://cdn.shopify.com/s/files/1/0557/4269/3571/products/BG11556_ShrimpCrackersSpicy__Hero_2048x.jpg?v=1675799011",
+    "ProductName": "Nongshim",
+    "Description": "Spicy Shrimp Crackers",
+    "Price": 3.5
+  },
+  {
+    "Id": 9,
+    "ProductImage": "https://www.buniyaa.com/https://cdn.shopify.com/s/files/1/0429/1674/1280/products/Kurkure_Masala_Munch_1800x1800.jpg?v=1612814154",
+    "ProductName": "KurKure",
+    "Description": "Masala Munch Chips",
+    "Price": 6.5
+  },
+  {
+    "Id": 10,
+    "ProductImage": "https://www.walmart.com/ https://i5.walmartimages.com/asr/70fdc205-362b-4357-9588-774a56560417.99f7de04894b6d221a317cde8bca8819.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+    "ProductName": "Calbee",
+    "Description": "Potato Chips & KFC",
+    "Price": 6.5
+  },
+  {
+    "Id": 11,
+    "ProductImage": "https://www.google.com/https://e8v9k5qwo6b.exactdn.com/wp-content/uploads/2023/04/BA163.jpg?strip=all&lossy=1&ssl=1",
+    "ProductName": "Tre Marie",
+    "Description": "Hazelnut Cookies",
+    "Price": 6.5
+  },
+  {
+    "Id": 12,
+    "ProductImage": "https://www.bokksumarket.com/https://cdn.shopify.com/s/files/1/0557/4269/3571/products/BG11122_2048x.jpg?v=1650897767",
+    "ProductName": "Nestle Japan KitKat",
+    "Description": "Variety Pack KitKat: Rich Green Tea, Dark Chocolate, and White Chocolate flavors",
+    "Price": 15.5
+  }
+]
