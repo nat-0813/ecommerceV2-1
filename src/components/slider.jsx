@@ -8,14 +8,16 @@ import fpro4 from "../images/fpro4.jpeg";
 import fpro5 from "../images/fpro5.jpeg";
 import fpro6 from "../images/fpro6.webp";
 
-//defines a functional component named Slider using an arrow function syntax. Inside the component, a sliderRef variable is created using the useRef hook. This variable will be used to reference the slider container element in the DOM.
+// functional component named Slider using an arrow function syntax. Inside the component, a sliderRef variable is created using the useRef hook.
+//This variable will be used to reference the slider container element in the DOM.
 const Slider = () => {
   const sliderRef = useRef(null);
   //two functions, scrollLeft and scrollRight, are defined. They are used to scroll the slider container element to the left or right when invoked
   const scrollLeft = () => {
     sliderRef.current.scrollLeft -= sliderRef.current.offsetWidth;
   };
-  //By accessing the sliderRef.current property, which represents the DOM element referenced by sliderRef, the scrollLeft property is modified to adjust the scroll position
+  //By accessing the sliderRef.current property, which represents the DOM element referenced by sliderRef,
+  //the scrollLeft property is modified to adjust the scroll position
   const scrollRight = () => {
     sliderRef.current.scrollLeft += sliderRef.current.offsetWidth;
   };
