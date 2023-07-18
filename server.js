@@ -1,10 +1,11 @@
 // importing node modules
-const fs = require("fs");
+// const fs = require("fs");
 const express = require("express");
 const app = express();
 const mysql2 = require("mysql2");
-const path = require("path");
-const bodyParser = require("body-parser");
+//  const bodyParser = require("body-parser");
+// const path = require("path");
+
 const port = 3000;
 
 app.use(express.json());
