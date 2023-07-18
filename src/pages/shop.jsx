@@ -53,12 +53,12 @@ const Shop = () => {
       setFilteredProducts(products);
     } else if (filter === "cookies") {
       const filtered = products.filter((product) =>
-        product.ProductName.toLowerCase().includes("cookie")
+        product.ProductName.toLowerCase().includes("cookies")
       );
       setFilteredProducts(filtered);
     } else if (filter === "chips") {
       const filtered = products.filter((product) =>
-        product.ProductName.toLowerCase().includes("chip")
+        product.ProductName.toLowerCase().includes("chips")
       );
       setFilteredProducts(filtered);
     } else if (filter === "price-less-than-10") {
