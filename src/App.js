@@ -7,7 +7,7 @@ import Footer from "./components/footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar";
-
+//Routing functionality
 function App() {
   return (
     <div className="App">

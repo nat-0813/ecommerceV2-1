@@ -5,7 +5,7 @@ const app = express();
 const mysql2 = require("mysql2");
 const path = require("path");
 const bodyParser = require("body-parser");
-const port = 3002;
+const port = 3000;
 
 app.use(express.json());
 

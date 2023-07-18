@@ -3,25 +3,37 @@ import "../css/contact.css";
 import people1 from "../images/people1.jpg";
 import people2 from "../images/people2.jpeg";
 import people3 from "../images/people3.png";
+
+//a new class component named FormDetails that extends the React.Component class.
 class FormDetails extends React.Component {
   handleSubmit = (event) => {
+    //defines an arrow function handleSubmit as a class property.
+    //It takes an event object as a parameter. It prevents the default form submission behavior by calling event.preventDefault().
     event.preventDefault(); // Prevent form submission
 
+    //document.querySelector to select the input elements and textarea element with specific names in the DOM and assign them to the corresponding variables.
     const nameInput = document.querySelector('input[name="name"]');
     const emailInput = document.querySelector('input[name="email"]');
     const subjectInput = document.querySelector('input[name="subject"]');
     const messageInput = document.querySelector('textarea[name="message"]');
 
+    //These lines extract the values of the input elements and textarea, and store them in variables after trimming any leading or trailing whitespace using the trim() method.
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
     const subject = subjectInput.value.trim();
     const message = messageInput.value.trim();
 
+    //This condition checks if the name value is empty.
+    //If it is, it calls the displayErrorMessage method with the nameInput element and an error message, and then returns from the function.
     if (name === "") {
       this.displayErrorMessage(nameInput, "Please enter your name.");
       return;
     }
 
+    //These lines check if the email value is empty.
+    //If it is, it displays an error message.
+    //If the email value is not empty, it further checks if the email is valid using the isValidEmail method.
+    //If the email is not valid, it displays an error message.
     if (email === "") {
       this.displayErrorMessage(emailInput, "Please enter your email.");
       return;
@@ -33,11 +45,15 @@ class FormDetails extends React.Component {
       return;
     }
 
+    //This condition checks if the subject value is empty.
+    // If it is, it calls the displayErrorMessage method with the subjectInput element and an error message, and then returns from the function.
     if (subject === "") {
       this.displayErrorMessage(subjectInput, "Please enter the subject.");
       return;
     }
 
+    //This condition checks if the message value is empty.
+    //If it is, it calls the displayErrorMessage method with the messageInput element and an error message, and then returns from the function.
     if (message === "") {
       this.displayErrorMessage(messageInput, "Please enter your message.");
       return;
@@ -47,6 +63,9 @@ class FormDetails extends React.Component {
     event.target.submit();
   };
 
+  //This is a method definition for displayErrorMessage.
+  // It creates a new <p> element, sets its class and text content based on the error message, and appends it to the parent element of the inputElement.
+  // If there's already an existing error message, it removes it before appending the new one.
   displayErrorMessage(inputElement, message) {
     const errorElement = document.createElement("p");
     errorElement.classList.add("error-message");
@@ -61,10 +80,15 @@ class FormDetails extends React.Component {
     parentElement.appendChild(errorElement);
   }
 
+  //This is a method definition for isValidEmail.
+  //It takes an email parameter and uses a regular expression to check if the email is valid.
+  //It returns true if the email matches the regex pattern, and false otherwise.
+
   isValidEmail(email) {
     const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     return emailRegex.test(email);
   }
+  // the render method of the FormDetails component
   render() {
     return (
       <div>

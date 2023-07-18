@@ -1,4 +1,6 @@
 // first, had to install React, useEffect, and useState these were necessary for creating a React component and managing state and side effects
+//// THE CODE BELOW FETCHES THE PRODUCTS FROM THE DATABASE WHEN THE SERVER IS RUNNING
+
 import React, { useEffect, useState } from "react";
 import "../css/shop.css";
 import pro1 from "../images/pro1.webp";
@@ -15,73 +17,73 @@ import pro11 from "../images/pro11.webp";
 import pro12 from "../images/pro12.webp";
 
 // import { response } from "express";
-//Inside the component, there are three state variables: products, selectedFilter, and filteredProducts.
-//They are initialized using the useState hook.
+
 const Shop = () => {
+  // will be used to store the product data from the api
   const [products, setProducts] = useState([]);
-  const [selectedFilter, setSelectedFilter] = useState("all");
+  // store the filtered products based on their filter
   const [filteredProducts, setFilteredProducts] = useState([]);
-  //The useEffect hook is used to fetch the product data from the specified API endpoint
-  //When the component mounts, the effect is triggered, and the product data is retrieved.
+  // will be used to keep track of the current filter selected
+  const [selectedFilter, setSelectedFilter] = useState("all");
+
+  // fetching the data from the json data at the api endpoint connected to the mysql database
+
+  // when the page is loaded it will fetch ALL products from the api
+  // the response is converted to json
+  // the data that we receive updates the state of the products and filtered products using
+  // setProducts and setFilteredProducts
   useEffect(() => {
-    fetch("http://localhost:3000/productsjson") // Replace with your API endpoint
+    fetch("http://localhost:3000/productsjson")
       .then((response) => response.json())
       .then((data) => {
-        //The retrieved data is then used to set the products and filteredProducts state variables.
         setProducts(data);
         setFilteredProducts(data);
       })
-      //If there's an error during the fetch request, it is caught and logged to the console.
       .catch((error) => {
         console.error("Error fetching products:", error);
       });
   }, []);
-  //The handleFilter function is defined to handle the filtering of products based on the selected filter.
+
+  // this function handles the filter
+
   const handleFilter = (filter) => {
-    //It takes a filter parameter, which represents the selected filter.
-    //Inside the function, the setSelectedFilter function is used to update the selectedFilter state variable with the chosen filter value.
-    setSelectedFilter(filter); //Inside the function, the setSelectedFilter function is used to update the selectedFilter state variable with the chosen filter value.
+    setSelectedFilter(filter);
+    // if/else statement used to determine what products to show
     if (filter === "all") {
-      //If the filter is "all", the filteredProducts state variable is set to the original products array.
       setFilteredProducts(products);
-    } else if (filter === "chocolates") {
-      //If the filter is "chocolates", the filteredProducts state variable is set to an array of products that have a name containing the word "chocolate" (case-insensitive).
+    } else if (filter === "cookies") {
       const filtered = products.filter((product) =>
-        product.ProductName.toLowerCase().includes("chocolate")
+        product.ProductName.toLowerCase().includes("cookie")
       );
       setFilteredProducts(filtered);
     } else if (filter === "chips") {
-      //If the filter is "chips", the filteredProducts state variable is set to an array of products that have a name containing the word "chip" (case-insensitive).
       const filtered = products.filter((product) =>
         product.ProductName.toLowerCase().includes("chip")
       );
-      //If the filter is "price-less-than-10", the filteredProducts state variable is set to an array of products that have a price less than 10.
       setFilteredProducts(filtered);
     } else if (filter === "price-less-than-10") {
       const filtered = products.filter((product) => product.Price < 10);
-      //The filtered array is then set as the new value of the filteredProducts state variable.
       setFilteredProducts(filtered);
     }
   };
+
+  // whenever a filter button is clicked, the handlefilter function will be called.
+  // Based on the selected filter, the function filters the products array to create a new filtered array using the filter method.
+  // We are able to filter through the products through the product name property
   return (
-    //The handleFilter function is defined to handle the filtering of products based on the selected filter.
-    //It takes a filter parameter, which represents the selected filter
-    <>
+    <div>
       <div className="filter-buttons">
         <button
-          //inside the function, the setSelectedFilter function is used to update the selectedFilter state variable with the chosen filter value.
-          //Depending on the selected filter, the products array is filtered using different conditions.
-          className={selectedFilter === "all" ? "active" : ""} //If the filter is "all", the filteredProducts state variable is set to the original products array.
+          className={selectedFilter === "all" ? "active" : ""}
           onClick={() => handleFilter("all")}
         >
-          All Products
+          All
         </button>
         <button
-          //
-          className={selectedFilter === "chocolates" ? "active" : ""}
-          onClick={() => handleFilter("chocolates")}
+          className={selectedFilter === "cookies" ? "active" : ""}
+          onClick={() => handleFilter("cookies")}
         >
-          Chocolates
+          Cookies
         </button>
         <button
           className={selectedFilter === "chips" ? "active" : ""}
@@ -106,16 +108,7 @@ const Shop = () => {
           </li>
         ))}
       </ul>
-      {/* <ul id="products">
-        {products.map((product) => (
-          <li key={product.Id}>
-            <img src={product.ProductImage} alt={product.ProductName} />
-            <h2>{product.ProductName}</h2>
-            <h4>{product.Description}</h4>
-            <p>${product.Price.toFixed(2)}</p>
-          </li>
-        ))}
-      </ul> */}
+
       <section className="page-header">
         <h1>Stay Adventurous </h1>
         <ul class="product-list">
@@ -361,8 +354,8 @@ const Shop = () => {
           </section>
         </ul>
       </section>
-      ;
-    </>
+    </div>
   );
 };
+
 export default Shop;
